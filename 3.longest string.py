@@ -1,0 +1,21 @@
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        lis = {}
+        n ,start = 0, 0
+
+        for i in range(len(s)):
+            if s[i] in lis :
+                start = lis[s[i]]
+            else:
+                n = max(n,i-start+1)
+
+            lis[s[i]] = i
+
+        return n
+
+s=Solution()
+s.lengthOfLongestSubstring("abcabcbb")
