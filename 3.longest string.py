@@ -8,7 +8,7 @@ class Solution(object):
         n ,start = 0, 0
 
         for i in range(len(s)):
-            if s[i] in lis :
+            if s[i] in lis and start <= lis[s[i]] :
                 start = lis[s[i]]
             else:
                 n = max(n,i-start+1)
